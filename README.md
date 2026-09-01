@@ -1,16 +1,9 @@
 # 🩺 clineval
 
-Calibration, discrimination, and decision curve analysis for binary clinical
-prediction models — as a small, tested, pip-installable Python library, plus an
-interactive Streamlit app to explore results without writing any code.
+Calibration, discrimination, and decision curve analysis for binary clinical prediction models — as a small, tested, pip-installable Python library, plus an interactive Streamlit app to explore results without writing any code.
 
-Most clinical ML evaluations report AUROC and stop there. AUROC alone can't tell you
-whether a model's probability estimates are trustworthy (**calibration**), or whether
-using it actually changes clinical decisions for the better at the threshold clinicians
-would use in practice (**decision curve analysis**). `clineval` makes both of those easy
-to compute and visualize properly.
+Most clinical ML evaluations report AUROC and stop there. AUROC alone can't tell you whether a model's probability estimates are trustworthy (**calibration**), or whether using it actually changes clinical decisions for the better at the threshold clinicians would use in practice (**decision curve analysis**). `clineval` makes both of those easy to compute and visualise properly.
 
-**[Try the live demo →](#)** *(add your Streamlit Cloud URL here after deploying)*
 
 ## What's included
 
@@ -36,8 +29,8 @@ to compute and visualize properly.
 pip install -e ".[plots]"
 ```
 
-(Not yet published to PyPI — install from a local clone or your fork's GitHub URL:
-`pip install git+https://github.com/<your-username>/clineval.git`)
+(Not yet published to PyPI):
+`pip install git+https://github.com/Nathan-Russ/Clin-eval.git`)
 
 ## Quickstart
 
@@ -84,26 +77,16 @@ The demo ships with two synthetic datasets:
   against a new ML model, for exploring paired comparison and cluster-aware confidence intervals.
 
 The **Literature Context** tab makes live calls to PubMed and ClinicalTrials.gov, so it
-needs internet access to work (this is automatic once deployed; it won't work in a fully
-offline environment).
+needs internet access to work 
 
-## Deploy your own copy of the demo app (free, ~2 minutes)
+## To Deploy your own copy of the demo app (free, ~2 minutes)
 
-1. Push this repo to your own GitHub account.
+1. Clone this repo to your own GitHub account.
 2. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.
 3. Click **New app**, pick your repo/branch, and set the main file path to `demo_app/app.py`.
 4. Click **Deploy**.
 
-## Run the tests
 
-```bash
-pip install -e ".[dev]"
-pytest tests/ -v
-```
-
-Tests cover every metric in the library, the paired/clustered bootstrap functions, and
-the PubMed/ClinicalTrials.gov response parsing (mocked — no live network calls, so the
-suite runs fast and doesn't depend on third-party APIs being reachable).
 
 ## Project structure
 
